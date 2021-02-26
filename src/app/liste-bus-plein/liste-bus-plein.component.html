@@ -1,0 +1,32 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link " routerLink="/listeabonne">Liste des Abonnes</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link " routerLink="/listeemployee">Liste des Employés</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" routerLink="/listebusplein">Liste Stations surchargées</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/ajouteremployer">Ajouter un employer</a>
+  </li>
+</ul>
+<h1 style="text-align:center">Liste des Stations surchargées</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Direction</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let response of responses">
+    <tr>
+      <th scope="row">{{response.id}}</th>
+      <td>{{response.nom}}</td>
+      <td>{{response.direction}}</td>
+
+    </tr>
+  </tbody>
+</table>

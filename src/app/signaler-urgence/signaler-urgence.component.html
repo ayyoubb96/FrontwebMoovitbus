@@ -1,0 +1,15 @@
+<form #f="ngForm" (ngSubmit)="signalerUrgence(f.value)" method="post">
+  <input type="hidden" [ngModel]="chauffeur_id" name="chauffeur_id" >
+    <div class="form-group row ">
+       <label for="casUrgence" class="col-sm-2  col-form-label" >Type d'urgence</label>
+      <div class="col-sm-3">
+       <select name="type" ngModel  class="form-control w-100 " id="casUrgence">
+         <option value="accident">accident</option>
+         <option value="Travaux publics">travaux public</option>
+       </select>
+      </div>
+      <div class="col-sm-4">  <button  class="btn btn-secondary">Signaler l'Urgence</button></div>
+    </div>
+
+
+</form>
