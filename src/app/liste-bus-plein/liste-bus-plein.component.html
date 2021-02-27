@@ -16,15 +16,15 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Nom</th>
+      <th scope="col">Nom de station</th>
+      <th scope="col">Ligne</th>
       <th scope="col">Direction</th>
     </tr>
   </thead>
   <tbody *ngFor="let response of responses">
     <tr>
-      <th scope="row">{{response.id}}</th>
-      <td>{{response.nom}}</td>
+      <th scope="row">{{response.nom}}</th>
+      <td>{{response.ligne}}</td>
       <td>{{response.direction}}</td>
 
     </tr>
