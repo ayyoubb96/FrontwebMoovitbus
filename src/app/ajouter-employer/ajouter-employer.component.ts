@@ -12,39 +12,42 @@ export class AjouterEmployerComponent implements OnInit {
 
 
 
+    suivantactivated =false;
+
   constructor(private http: HttpClient) {
+
+
 }
 
-handleClick(){
+  onCreatePost(postData: {nom: string;
+    prenom: string;
+    email: string;
+    password: string;
+    num_tel: string;
+                          tel: string;
+                           }) {
+    // Send Http request
 
-  fetch('http://localhost:8080/api/admin/ajouter/admin', {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-          "token": {
-              "email": "hatimbakk25@gmail.com",
-              "password": "45123"
-          },
-          "new admin": {
-              "nom": "BARAKATE",
-              "prenom": "ALI",
-              "email": "ali@gmail.com",
-              "password": "dfghsdfgfrsgs",
-              "numTel": "4044644408074"
-          }
+    this.http
+      .post(
+        'http://localhost:8080/api/admin/add/chauffeur',
+        postData
+      )
+      .subscribe(responseData => {
+        console.log(responseData);
+      });
+  }
 
-      })
-  })
-      .then(res => res.json())
-      .then(data => {
-          console.log(data)
-          alert('done')
-      })
-      .catch(e => alert('error'))
-}
+  onSelectedElementList(){
+
+  }
+  activatesuivant(){
+    this.suivantactivated=true;
+  }
+
+
   ngOnInit(): void {
+
   }
 
 }
